@@ -1,10 +1,12 @@
-import streamlit as st
-import sys
 import os
+import sys
+import streamlit as st
 
 # 현재 디렉토리를 path에 추가하여 app 모듈을 불러올 수 있도록 설정
 # root 디렉토리에서 실행될 것을 가정함
-sys.path.append(os.getcwd())
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 
 from app.embedder import SimilartyBaseLogic
 
@@ -15,7 +17,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# 로직 초기화 (캐싱 적용)
 @st.cache_resource
 def load_chatbot_logic():
     logic = SimilartyBaseLogic()
