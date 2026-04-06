@@ -1,0 +1,11 @@
+[project]
+name = "similarity"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "sentence-transformers>=5.3.0",
+    "streamlit>=1.56.0",
+    "torchvision>=0.26.0",
+]
