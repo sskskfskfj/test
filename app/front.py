@@ -11,7 +11,7 @@ if ROOT_DIR not in sys.path:
 from app.embedder import SimilartyBaseLogic
 
 # 페이지 설정
-st.set_page_config(
+st.set_page_config( # 여기 수정 2026-05-03
     page_title="의료 전문 AI 챗봇",
     page_icon="🩺",
     layout="centered"
@@ -32,7 +32,7 @@ except Exception as e:
 
 # 사이드바 설정
 with st.sidebar:
-    st.title("챗봇 설정")
+    st.title("챗봇 설정") # 여기도 수정 2026-05-03
     st.info("이 챗봇은 의료 분야 전문 지식을 기반으로 답변합니다. 주제를 벗어난 질문에는 답변이 제한될 수 있습니다.")
     if st.button("대화 기록 삭제"):
         st.session_state.messages = []
@@ -52,6 +52,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 사용자 입력 처리
+# 여기도 수정 2026-05-03
 if prompt := st.chat_input("의료 관련 질문을 입력해주세요."):
     # 1. 사용자 메시지 표시 및 저장
     st.session_state.messages.append({"role": "user", "content": prompt})
