@@ -12,7 +12,7 @@ from app.embedder import SimilartyBaseLogic
 
 # 페이지 설정
 st.set_page_config( # 여기 수정 2026-05-03
-    page_title="의료 전문 AI 챗봇",
+    page_title="TALKTALK한 선배",
     layout="centered"
 )
 
@@ -32,14 +32,14 @@ except Exception as e:
 # 사이드바 설정
 with st.sidebar:
     st.title("챗봇 설정") # 여기도 수정 2026-05-03
-    st.info("이 챗봇은 의료 분야 전문 지식을 기반으로 답변합니다. 주제를 벗어난 질문에는 답변이 제한될 수 있습니다.")
+    st.info("주제를 벗어난 질문에는 답변이 제한될 수 있습니다.")
     if st.button("대화 기록 삭제"):
         st.session_state.messages = []
         st.rerun()
 
 # 메인 UI
-st.title("🩺 의료 전문 AI 챗봇")
-st.caption("궁금하신 의료 관련 내용을 질문해 주세요.")
+st.title("TALKTALK한 선배")
+st.caption("궁금하신 내용을 질문해 주세요.")
 
 # 세션 상태 초기화 (대화 기록 저장)
 if "messages" not in st.session_state:
