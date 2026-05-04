@@ -13,7 +13,6 @@ from app.embedder import SimilartyBaseLogic
 # 페이지 설정
 st.set_page_config( # 여기 수정 2026-05-03
     page_title="의료 전문 AI 챗봇",
-    page_icon="🩺",
     layout="centered"
 )
 
@@ -53,7 +52,7 @@ for message in st.session_state.messages:
 
 # 사용자 입력 처리
 # 여기도 수정 2026-05-03
-if prompt := st.chat_input("의료 관련 질문을 입력해주세요."):
+if prompt := st.chat_input("질문을 입력해주세요."):
     # 1. 사용자 메시지 표시 및 저장
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -61,7 +60,7 @@ if prompt := st.chat_input("의료 관련 질문을 입력해주세요."):
 
     # 2. 챗봇 응답 생성
     with st.chat_message("assistant"):
-        with st.spinner("전문 지식을 분석 중입니다..."):
+        with st.spinner("분석 중입니다..."):
             try:
                 response = chatbot.getSimilarity(prompt)
                 st.markdown(response)
